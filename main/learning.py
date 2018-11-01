@@ -59,7 +59,7 @@ class Learning:
     def sarsa(self):
         self.init_q_values()
         for episode in range(0, 10000):
-            x, y = 0, 0
+            x, y = self.world.init_state()
             while True:
                 a = self.chose_action(x, y)
                 r, n_x, n_y = self.world.basic_moves(x, y, a)
